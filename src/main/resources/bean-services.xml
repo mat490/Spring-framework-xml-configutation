@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- bean definitions here -->
+
+    <!-- CitaServiceImpl -->
+    <bean id="citaService" class="dgtic.modulo.siete.servicio.CitaServiceImpl"
+    scope="singleton">
+        <constructor-arg ref="citaPublisher"/>
+    </bean>
+
+    <!-- CitaPublisher -->
+    <bean id="citaPublisher" class="dgtic.modulo.siete.servicio.CitaPublisherImpl"
+          scope="singleton"/>
+
+</beans>

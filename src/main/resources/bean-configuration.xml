@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- bean definitions here -->
+    <!-- Paciente    -->
+    <bean id="pacienteUno" class="dgtic.modulo.siete.modelo.Paciente">
+        <constructor-arg ref="datosPacienteUno"/>
+        <constructor-arg ref="estadoSoltero"/>
+        <constructor-arg ref="ocupacionEstudiante"/>
+        <constructor-arg ref="combeNegativo"/>
+        <constructor-arg ref="grupoA"/>
+        <constructor-arg ref="rhNegativo"/>
+        <constructor-arg ref="lugarNacimientoPacienteUno"/>
+    </bean>
+
+    <!-- Medico    -->
+    <bean id="medicoUno" class="dgtic.modulo.siete.modelo.Medico">
+        <constructor-arg value="1234567"/>
+        <constructor-arg ref="datosMedicoUno"/>
+        <constructor-arg ref="especialidadInternista"/>
+    </bean>
+
+    <!-- Beans para referenciar   -->
+        <!-- Propios del Paciente        -->
+            <!-- Direccion           -->
+    <bean id="direccionPacienteUno" class="dgtic.modulo.siete.modelo.Direccion">
+        <constructor-arg value="México"/>
+        <constructor-arg value="Morelos"/>
+        <constructor-arg value="Cuernavaca"/>
+        <constructor-arg value="Teopanzolco"/>
+        <constructor-arg value="62350"/>
+        <constructor-arg value="20"/>
+    </bean>
+            <!-- Datos Personales           -->
+    <bean id="datosPacienteUno" class="dgtic.modulo.siete.modelo.DatosPersonales">
+        <constructor-arg value="Juan"/>
+        <constructor-arg value="Renato"/>
+        <constructor-arg value="Ramirez"/>
+        <constructor-arg value="Linares"/>
+        <constructor-arg value="2002-09-20"/>
+        <constructor-arg value="22"/>
+        <constructor-arg value="5555555555"/>
+        <constructor-arg value="juan@email.com"/>
+        <constructor-arg ref="direccionPacienteUno"/>
+        <constructor-arg ref="sexoMasculino"/>
+    </bean>
+            <!-- Lugar de Nacimiento       -->
+    <bean id="lugarNacimientoPacienteUno" class="dgtic.modulo.siete.modelo.LugarNacimiento">
+        <constructor-arg value="México"/>
+        <constructor-arg value="Morelos"/>
+        <constructor-arg value="Cuernavaca"/>
+    </bean>
+
+        <!-- Propios del Medico        -->
+            <!-- Direccion        -->
+    <bean id="direccionMedicoUno" class="dgtic.modulo.siete.modelo.Direccion">
+        <constructor-arg value="México"/>
+        <constructor-arg value="CDMX"/>
+        <constructor-arg value="Coyoacán"/>
+        <constructor-arg value="5 de Mayo"/>
+        <constructor-arg value="04510"/>
+        <constructor-arg value="145"/>
+    </bean>
+            <!-- Datos Personales        -->
+    <bean id="datosMedicoUno" class="dgtic.modulo.siete.modelo.DatosPersonales">
+        <constructor-arg value="Mario"/>
+        <constructor-arg value="Luis"/>
+        <constructor-arg value="Gonzales"/>
+        <constructor-arg value="Gutierrez"/>
+        <constructor-arg value="1990-10-10"/>
+        <constructor-arg value="34"/>
+        <constructor-arg value="5555555555"/>
+        <constructor-arg value="mario@email.com"/>
+        <constructor-arg ref="direccionMedicoUno"/>
+        <constructor-arg ref="sexoMasculino"/>
+    </bean>
+
+        <!-- Globales de los pacientes o Medicos       -->
+            <!-- Sexos        -->
+    <bean id="sexoMasculino" class="dgtic.modulo.siete.modelo.Sexo">
+        <constructor-arg value="Masculino"/>
+    </bean>
+    <bean id="sexoFemenino" class="dgtic.modulo.siete.modelo.Sexo">
+        <constructor-arg value="Fememnino"/>
+    </bean>
+            <!-- Combe    -->
+    <bean id="combeNegativo" class="dgtic.modulo.siete.modelo.Combe">
+        <constructor-arg value="Negativo"/>
+    </bean>
+    <bean id="combePositivo" class="dgtic.modulo.siete.modelo.Combe">
+        <constructor-arg value="Positivo"/>
+    </bean>
+            <!-- Grupos Sanguineos    -->
+    <bean id="grupoA" class="dgtic.modulo.siete.modelo.GrupoSanguineo">
+        <constructor-arg value="A"/>
+    </bean>
+    <bean id="grupoB" class="dgtic.modulo.siete.modelo.GrupoSanguineo">
+        <constructor-arg value="B"/>
+    </bean>
+    <bean id="grupoAB" class="dgtic.modulo.siete.modelo.GrupoSanguineo">
+        <constructor-arg value="AB"/>
+    </bean>
+    <bean id="grupoO" class="dgtic.modulo.siete.modelo.GrupoSanguineo">
+        <constructor-arg value="O"/>
+    </bean>
+            <!-- RH    -->
+    <bean id="rhNegativo" class="dgtic.modulo.siete.modelo.Rh">
+        <constructor-arg value="Negativo"/>
+    </bean>
+    <bean id="rhPositivo" class="dgtic.modulo.siete.modelo.Rh">
+        <constructor-arg value="Positivo"/>
+    </bean>
+            <!-- Estado Civil   -->
+    <bean id="estadoSoltero" class="dgtic.modulo.siete.modelo.EstadoCivil">
+        <constructor-arg value="Soltero"/>
+    </bean>
+    <bean id="estadoCasado" class="dgtic.modulo.siete.modelo.EstadoCivil">
+        <constructor-arg value="Casado"/>
+    </bean>
+            <!-- Ocupaciones    -->
+    <bean id="ocupacionEstudiante" class="dgtic.modulo.siete.modelo.Ocupacion">
+        <constructor-arg value="Estudiante"/>
+    </bean>
+    <bean id="ocupacionProgramador" class="dgtic.modulo.siete.modelo.Ocupacion">
+        <constructor-arg value="Programador"/>
+    </bean>
+            <!-- Especialidades    -->
+    <bean id="especialidadInternista" class="dgtic.modulo.siete.modelo.Especialidad">
+        <constructor-arg value="Internista"/>
+    </bean>
+    <bean id="especialidadPediatra" class="dgtic.modulo.siete.modelo.Especialidad">
+        <constructor-arg value="Pediatra"/>
+    </bean>
+
+
+
+
+</beans>
